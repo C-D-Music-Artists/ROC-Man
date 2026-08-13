@@ -3,7 +3,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-    <!-- ENGLISH HOME PAGE -->
     <url>
         <loc>https://c-d-music-artists.github.io/ROC-Man/</loc>
 
@@ -21,7 +20,6 @@
     </url>
 
 
-    <!-- GERMAN HOME PAGE -->
     <url>
         <loc>https://c-d-music-artists.github.io/ROC-Man/de/</loc>
 
@@ -39,25 +37,21 @@
     </url>
 
 
-    <!-- ENGLISH LEGAL NOTICE -->
     <url>
         <loc>https://c-d-music-artists.github.io/ROC-Man/legal-notice.html</loc>
     </url>
 
 
-    <!-- ENGLISH PRIVACY POLICY -->
     <url>
         <loc>https://c-d-music-artists.github.io/ROC-Man/privacy-policy.html</loc>
     </url>
 
 
-    <!-- GERMAN IMPRESSUM -->
     <url>
         <loc>https://c-d-music-artists.github.io/ROC-Man/de/impressum.html</loc>
     </url>
 
 
-    <!-- GERMAN DATENSCHUTZ -->
     <url>
         <loc>https://c-d-music-artists.github.io/ROC-Man/de/datenschutz.html</loc>
     </url>
