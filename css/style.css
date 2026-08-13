@@ -1,0 +1,419 @@
+/*
+====================================================
+
+ROC-Man
+Official Artist Website
+
+Website Version 1.0
+Foundation
+
+Datei:
+style.css
+
+====================================================
+*/
+/* ====================================================
+   LOCAL FONTS
+==================================================== */
+
+
+/* CINZEL */
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("../fonts/cinzel/Cinzel-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("../fonts/cinzel/Cinzel-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("../fonts/cinzel/Cinzel-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("../fonts/cinzel/Cinzel-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* POPPINS */
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/poppins/Poppins-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/poppins/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/poppins/Poppins-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/poppins/Poppins-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ====================================================
+   1. RESET
+==================================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ====================================================
+   2. ROOT / DESIGN SYSTEM
+==================================================== */
+
+:root {
+
+    /* Farben */
+
+    --color-background: #070707;
+    --color-background-soft: #0d0d0d;
+    --color-section: #111111;
+    --color-card: #181818;
+
+    --color-text: #f2f2f2;
+    --color-text-soft: #b8b8b8;
+    --color-text-muted: #7f7f7f;
+
+    --color-accent: #b28a4a;
+    --color-accent-light: #d2b06d;
+    --color-accent-dark: #7d5f31;
+
+    --color-border: #2b2b2b;
+
+    /* Typografie */
+
+    --font-heading: "Cinzel", serif;
+    --font-body: "Poppins", sans-serif;
+
+    /* Layout */
+
+    --container-width: 1200px;
+
+    --section-padding-desktop: 110px;
+    --section-padding-tablet: 80px;
+    --section-padding-mobile: 60px;
+
+    /* Radius */
+
+    --radius-small: 6px;
+    --radius-medium: 12px;
+    --radius-large: 20px;
+
+    /* Übergänge */
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.35s ease;
+}
+
+
+/* ====================================================
+   3. HTML / BODY
+==================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(178, 138, 74, 0.06),
+            transparent 35%
+        ),
+        var(--color-background);
+
+    color: var(--color-text);
+
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+
+/* ====================================================
+   4. TEXT SELECTION
+==================================================== */
+
+::selection {
+    background: var(--color-accent);
+    color: #000000;
+}
+
+
+/* ====================================================
+   5. TYPOGRAPHY
+==================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+}
+
+h2 {
+    margin-bottom: 30px;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    text-transform: uppercase;
+}
+
+h3 {
+    margin-bottom: 20px;
+
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+}
+
+p {
+    max-width: 760px;
+
+    color: var(--color-text-soft);
+}
+
+strong {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+
+/* ====================================================
+   6. LINKS
+==================================================== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    transition:
+        color var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-accent-light);
+}
+
+
+/* ====================================================
+   7. IMAGES
+==================================================== */
+
+img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ====================================================
+   8. BUTTONS
+==================================================== */
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* ====================================================
+   9. MAIN
+==================================================== */
+
+main {
+    width: 100%;
+}
+
+
+/* ====================================================
+   10. SECTIONS
+==================================================== */
+
+.section {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        var(--section-padding-desktop)
+        30px;
+}
+
+.section:nth-of-type(even) {
+    background: var(--color-background-soft);
+}
+
+
+/* ====================================================
+   11. SECTION CONTAINER
+==================================================== */
+
+.section-container {
+    width: 100%;
+    max-width: var(--container-width);
+
+    margin: 0 auto;
+}
+
+
+/* ====================================================
+   12. SECTION HEADINGS
+==================================================== */
+
+.section h2 {
+    position: relative;
+
+    display: inline-block;
+}
+
+.section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 2px;
+
+    margin-top: 14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-accent),
+            transparent
+        );
+}
+
+
+/* ====================================================
+   13. STANDARD CONTENT TEXT
+==================================================== */
+
+.section-container > p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+}
+
+
+/* ====================================================
+   14. ACCENT TEXT
+==================================================== */
+
+.accent-text {
+    color: var(--color-accent-light);
+}
+
+
+/* ====================================================
+   15. UTILITY CLASSES
+==================================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-center p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ====================================================
+   16. ACCESSIBILITY
+==================================================== */
+
+:focus-visible {
+    outline: 2px solid var(--color-accent-light);
+    outline-offset: 4px;
+}
+
+
+/* ====================================================
+   17. SCROLLBAR
+==================================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-dark);
+}

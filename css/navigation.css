@@ -1,0 +1,304 @@
+/*
+====================================================
+
+ROC-Man
+Official Artist Website
+
+Website Version 1.0
+
+Datei:
+navigation.css
+
+====================================================
+*/
+
+
+/* ====================================================
+   1. HEADER
+==================================================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(7, 7, 7, 0.88);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* ====================================================
+   2. NAVIGATION CONTAINER
+==================================================== */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: var(--container-width);
+
+    min-height: 78px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+}
+
+
+
+/* ====================================================
+   4. NAVIGATION LINKS
+==================================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 46px;
+
+    width: auto;
+
+    margin: 0 auto;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 8px 0;
+
+    font-size: 0.88rem;
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: var(--color-text-soft);
+}
+
+.nav-links a:hover {
+    color: var(--color-text);
+}
+
+
+/* ====================================================
+   5. LINK UNDERLINE
+==================================================== */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--color-accent);
+
+    transform: translateX(-50%);
+
+    transition: width var(--transition-normal);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+    /* ====================================================
+   LANGUAGE SWITCH
+==================================================== */
+
+.language-switch {
+    margin-left: 14px;
+    padding-left: 20px;
+
+    border-left: 1px solid var(--color-border);
+}
+
+.language-switch a {
+    color: var(--color-accent-light);
+    font-weight: 500;
+}
+
+.language-switch a:hover {
+    color: #ffffff;
+}
+/* ====================================================
+   6. MOBILE MENU BUTTON
+==================================================== */
+
+.menu-toggle {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 8px;
+
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: var(--radius-small);
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 100%;
+    height: 2px;
+
+    margin: 3px 0;
+
+    background: var(--color-text);
+
+    transition:
+        transform var(--transition-normal),
+        opacity var(--transition-normal);
+}
+
+
+/* ====================================================
+   7. ACTIVE MOBILE MENU ICON
+==================================================== */
+
+.menu-toggle.active span:nth-child(1) {
+    transform:
+        translateY(8px)
+        rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform:
+        translateY(-8px)
+        rotate(-45deg);
+}
+
+
+/* ====================================================
+   8. NAVIGATION OFFSET
+==================================================== */
+
+body {
+    padding-top: 78px;
+}
+
+
+/* ====================================================
+   9. TABLET / MOBILE NAVIGATION
+==================================================== */
+
+@media (max-width: 900px) {
+
+    .navigation {
+        min-height: 72px;
+
+        padding: 0 20px;
+    }
+
+    .site-header {
+        background: rgba(7, 7, 7, 0.95);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+
+        gap: 0;
+
+        padding: 20px 0 30px;
+
+        background: rgba(7, 7, 7, 0.98);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-12px);
+
+        transition:
+            opacity var(--transition-normal),
+            visibility var(--transition-normal),
+            transform var(--transition-normal);
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 15px 20px;
+
+        text-align: center;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    body {
+        padding-top: 72px;
+    }
+}
+
+
+/* ====================================================
+   10. SMALL MOBILE
+==================================================== */
+
+@media (max-width: 500px) {
+
+    .nav-logo {
+        font-size: 1.1rem;
+    }
+
+    .navigation {
+        padding: 0 16px;
+    }
+}

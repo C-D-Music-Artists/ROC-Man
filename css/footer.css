@@ -1,0 +1,141 @@
+/*
+====================================================
+
+ROC-Man
+Official Artist Website
+
+Datei:
+footer.css
+
+====================================================
+*/
+
+
+/* ====================================================
+   1. FOOTER
+==================================================== */
+
+.site-footer {
+    padding: 30px 30px;
+
+    background: #050505;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+/* ====================================================
+   2. FOOTER CONTAINER
+==================================================== */
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    width: 100%;
+    max-width: var(--container-width);
+
+    margin: 0 auto;
+}
+
+
+/* ====================================================
+   3. FOOTER MAIN
+==================================================== */
+
+.footer-main {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.footer-copyright,
+.footer-label {
+    margin: 0;
+
+    font-size: 0.76rem;
+    line-height: 1.6;
+}
+
+.footer-copyright {
+    color: var(--color-text-muted);
+}
+
+.footer-label {
+    color: var(--color-text-muted);
+}
+
+
+/* ====================================================
+   4. LABEL LINK
+==================================================== */
+
+.footer-label a {
+    color: var(--color-accent-light);
+
+    transition: color var(--transition-normal);
+}
+
+.footer-label a:hover {
+    color: #ffffff;
+}
+
+
+/* ====================================================
+   5. LEGAL LINKS
+==================================================== */
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 0.75rem;
+}
+
+.footer-legal a {
+    color: var(--color-text-muted);
+
+    transition: color var(--transition-normal);
+}
+
+.footer-legal a:hover {
+    color: var(--color-accent-light);
+}
+
+.footer-legal span {
+    color: var(--color-border);
+}
+
+
+/* ====================================================
+   6. MOBILE
+==================================================== */
+
+@media (max-width: 700px) {
+
+    .site-footer {
+        padding: 28px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+
+        gap: 18px;
+
+        text-align: center;
+    }
+
+    .footer-main {
+        align-items: center;
+    }
+
+    .footer-legal {
+        justify-content: center;
+    }
+}
