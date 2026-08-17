@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <url>
+        <loc>https://c-d-music-artists.github.io/ROC-Man/</loc>
+        <xhtml:link rel="alternate" hreflang="en"
+                    href="https://c-d-music-artists.github.io/ROC-Man/" />
+        <xhtml:link rel="alternate" hreflang="de"
+                    href="https://c-d-music-artists.github.io/ROC-Man/de/" />
+        <xhtml:link rel="alternate" hreflang="x-default"
+                    href="https://c-d-music-artists.github.io/ROC-Man/" />
+    </url>
+
+    <url>
+        <loc>https://c-d-music-artists.github.io/ROC-Man/de/</loc>
+        <xhtml:link rel="alternate" hreflang="en"
+                    href="https://c-d-music-artists.github.io/ROC-Man/" />
+        <xhtml:link rel="alternate" hreflang="de"
+                    href="https://c-d-music-artists.github.io/ROC-Man/de/" />
+        <xhtml:link rel="alternate" hreflang="x-default"
+                    href="https://c-d-music-artists.github.io/ROC-Man/" />
+    </url>
+
+    <url>
+        <loc>https://c-d-music-artists.github.io/ROC-Man/legal-notice.html</loc>
+    </url>
+
+    <url>
+        <loc>https://c-d-music-artists.github.io/ROC-Man/privacy-policy.html</loc>
+    </url>
+
+    <url>
+        <loc>https://c-d-music-artists.github.io/ROC-Man/de/impressum.html</loc>
+    </url>
+
+    <url>
+        <loc>https://c-d-music-artists.github.io/ROC-Man/de/datenschutz.html</loc>
+    </url>
+
+</urlset>
