@@ -16,6 +16,32 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://c-d-music-artists.github.io/ROC-Man/" />
     </url>
 
+        <url>
+        <loc>https://c-d-music-artists.github.io/ROC-Man/stories/mission-k2-18b.html</loc>
+        <xhtml:link rel="alternate"
+                    hreflang="en"
+                    href="https://c-d-music-artists.github.io/ROC-Man/stories/mission-k2-18b.html" />
+        <xhtml:link rel="alternate"
+                    hreflang="de"
+                    href="https://c-d-music-artists.github.io/ROC-Man/de/stories/mission-k2-18b.html" />
+        <xhtml:link rel="alternate"
+                    hreflang="x-default"
+                    href="https://c-d-music-artists.github.io/ROC-Man/stories/mission-k2-18b.html" />
+    </url>
+
+    <url>
+        <loc>https://c-d-music-artists.github.io/ROC-Man/de/stories/mission-k2-18b.html</loc>
+        <xhtml:link rel="alternate"
+                    hreflang="en"
+                    href="https://c-d-music-artists.github.io/ROC-Man/stories/mission-k2-18b.html" />
+        <xhtml:link rel="alternate"
+                    hreflang="de"
+                    href="https://c-d-music-artists.github.io/ROC-Man/de/stories/mission-k2-18b.html" />
+        <xhtml:link rel="alternate"
+                    hreflang="x-default"
+                    href="https://c-d-music-artists.github.io/ROC-Man/stories/mission-k2-18b.html" />
+    </url>
+    
     <url>
         <loc>https://c-d-music-artists.github.io/ROC-Man/legal-notice.html</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://c-d-music-artists.github.io/ROC-Man/legal-notice.html" />

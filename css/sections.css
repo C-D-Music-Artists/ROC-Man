@@ -566,7 +566,88 @@ sections.css
     transform: translateY(-2px);
 }
 
+/* =========================================================
+   18. STORY BUTTON – UNDER TWO MOONS
+   ========================================================= */
 
+.story-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 18px;
+    padding: 13px 16px;
+
+    background: linear-gradient(
+        135deg,
+        #c8a04b,
+        #e0bd72
+    );
+
+    border: 1px solid #e0bd72;
+    border-radius: var(--radius-small);
+
+    color: #080808;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+
+    text-align: center;
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 18px
+        rgba(200, 160, 75, 0.20);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        filter var(--transition-normal);
+}
+
+
+.story-button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 8px 24px
+        rgba(200, 160, 75, 0.35);
+}
+
+
+.story-button-icon {
+    flex: 0 0 auto;
+
+    font-size: 0.9rem;
+}
+
+
+.story-button-text {
+    display: inline-block;
+}
+
+
+.story-button-arrow {
+    flex: 0 0 auto;
+
+    font-size: 1rem;
+
+    transition:
+        transform var(--transition-normal);
+}
+
+
+.story-button:hover .story-button-arrow {
+    transform: translateX(4px);
+}
 
 /* ====================================================
    18. COMING SOON
@@ -1318,7 +1399,8 @@ sections.css
 
 
 
-/* ====================================================
+
+    /* ====================================================
    34. SMALL MOBILE
 ==================================================== */
 
@@ -1334,6 +1416,49 @@ sections.css
         padding: 20px;
     }
 
+
+    /* STORY BUTTON */
+
+    .story-button {
+        padding: 12px 14px;
+
+        gap: 8px;
+    }
+
+    .story-button-text {
+        font-size: 0.78rem;
+    }
+
+
+    .latest-release {
+        padding: 20px;
+    }
+
+    .latest-release-image {
+        max-width: 220px;
+    }
+
+
+    .social-links {
+        flex-direction: column;
+
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .social-link {
+        width: 100%;
+    }
+
+
+    .youtube-more-logo i {
+        font-size: 3rem;
+    }
+
+    .youtube-more-logo span {
+        font-size: 1.45rem;
+    }
+}
 
     .latest-release {
         padding: 20px;
