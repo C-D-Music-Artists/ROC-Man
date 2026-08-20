@@ -1,1061 +1,436 @@
 /* =========================================================
-   ROC-Man Story Page
-   Mission K2-18b
-   ========================================================= */
-
-
-/* =========================================================
-   1. ROOT / COLORS
+   ROC-Man – Story Pages
+   Shared styles: Mission K2-18b + Be Rich (Classic)
    ========================================================= */
 
 :root {
-    --story-bg: #080808;
-    --story-panel: #121212;
-    --story-panel-soft: #101010;
-
-    --story-text: #ece8df;
-    --story-muted: #a9a39a;
-
-    --story-gold: #c8a04b;
-    --story-gold-soft: #e0bd72;
-
-    --story-border: #2a2a2a;
-
-    --story-max: 1100px;
-    --story-reading: 780px;
+  --story-bg: #080808;
+  --story-panel: #121212;
+  --story-card: #1b1b1b;
+  --story-border: #2a2a2a;
+  --story-text: #f2f2f2;
+  --story-muted: #b8b8b8;
+  --story-gold: #c8a04b;
+  --story-red: #b00020;
+  --story-max: 1180px;
 }
 
-
-/* =========================================================
-   2. BASIC SETTINGS
-   ========================================================= */
-
-html {
-    scroll-behavior: smooth;
-}
-
+html { scroll-behavior: smooth; }
 
 body {
-    margin: 0;
-
-    background: var(--story-bg);
-    color: var(--story-text);
+  margin: 0;
+  background: var(--story-bg);
+  color: var(--story-text);
 }
-
-
-img {
-    max-width: 100%;
-}
-
-
-/* =========================================================
-   3. TOP BAR
-   ========================================================= */
-
-.story-topbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    min-height: 58px;
-
-    padding: 0 28px;
-
-    background: rgba(8, 8, 8, 0.92);
-
-    border-bottom:
-        1px solid
-        rgba(200, 160, 75, 0.18);
-
-    backdrop-filter: blur(14px);
-}
-
-
-.story-home-link {
-    color: var(--story-text);
-
-    font-size: 0.84rem;
-    letter-spacing: 0.08em;
-
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-
-.story-home-link:hover {
-    color: var(--story-gold-soft);
-}
-
-
-/* =========================================================
-   4. LANGUAGE SWITCHER
-   ========================================================= */
-
-.story-language {
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-}
-
-
-.story-language a,
-.story-language span {
-    padding: 7px 10px;
-
-    border-radius: 4px;
-
-    font-size: 0.84rem;
-    letter-spacing: 0.08em;
-
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-
-.story-language a {
-    color: var(--story-muted);
-}
-
-
-.story-language a:hover {
-    color: var(--story-text);
-}
-
-
-.story-language .active {
-    color: #080808;
-
-    background: var(--story-gold);
-}
-
-
-/* =========================================================
-   5. STORY PAGE
-   ========================================================= */
 
 .story-page {
-    overflow: hidden;
-
-    background: var(--story-bg);
+  width: 100%;
+  overflow: hidden;
 }
 
+/* ---------- Topbar ---------- */
+.story-topbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: var(--story-max);
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  border-bottom: 1px solid var(--story-border);
+}
 
-/* =========================================================
-   6. HERO / COVER
-   ========================================================= */
+.story-home-link,
+.story-language a,
+.story-language span {
+  color: var(--story-text);
+  text-decoration: none;
+}
 
+.story-home-link:hover,
+.story-language a:hover { color: var(--story-gold); }
+
+.story-language {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  font-size: .9rem;
+}
+
+.story-language .active {
+  color: var(--story-gold);
+  font-weight: 700;
+}
+
+/* ---------- Shared Hero ---------- */
 .story-hero {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    min-height: calc(100vh - 58px);
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(200, 160, 75, 0.08),
-            transparent 35%
-        ),
-        var(--story-bg);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+  align-items: center;
+  gap: 4rem;
+  max-width: var(--story-max);
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
 }
 
-
-.story-hero-image {
-    position: absolute;
-
-    inset: 0;
-}
-
-
-.story-hero-image::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(8, 8, 8, 0.05) 0%,
-            rgba(8, 8, 8, 0.18) 48%,
-            rgba(8, 8, 8, 0.82) 84%,
-            #080808 100%
-        );
-}
-
-
-/* Cover vollständig sichtbar, kein Abschneiden */
-
+.story-hero-image { margin: 0; min-width: 0; }
 .story-hero-image img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    object-position: center;
-
-    background: #080808;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 55px rgba(0,0,0,.42);
 }
 
-
-.story-hero-copy {
-    position: relative;
-
-    z-index: 2;
-
-    width: min(90%, 900px);
-
-    margin: 0 auto;
-
-    padding: 80px 0 60px;
+.story-hero-copy { max-width: 620px; }
+.story-eyebrow,
+.chapter-kicker {
+  display: inline-block;
+  color: var(--story-gold);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
 }
 
-
-.story-eyebrow {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color: var(--story-gold-soft);
-
-    font-size: 0.78rem;
-    font-weight: 600;
-
-    letter-spacing: 0.16em;
-
-    text-transform: uppercase;
+.story-hero-copy h1 {
+  margin: .55rem 0 .65rem;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1.04;
 }
-
-
-.story-hero h1 {
-    max-width: 760px;
-
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size:
-        clamp(
-            2.8rem,
-            7vw,
-            5.6rem
-        );
-
-    line-height: 0.98;
-}
-
 
 .story-subtitle {
-    margin: 15px 0 0;
-
-    color: var(--story-gold-soft);
-
-    font-size:
-        clamp(
-            1.25rem,
-            3vw,
-            2rem
-        );
-
-    line-height: 1.3;
+  margin: 0 0 1rem;
+  color: var(--story-gold);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
 }
-
 
 .story-intro {
-    max-width: 620px;
-
-    margin: 22px 0 30px;
-
-    color: var(--story-text);
-
-    font-size: 1.08rem;
-
-    line-height: 1.7;
+  margin: 0 0 1.8rem;
+  color: var(--story-muted);
+  font-size: 1.12rem;
+  line-height: 1.7;
 }
 
-
-.story-start-button {
-    display: inline-flex;
-    align-items: center;
-
-    padding: 12px 18px;
-
-    border:
-        1px solid
-        var(--story-gold);
-
-    border-radius: 5px;
-
-    color: var(--story-text);
-
-    background:
-        rgba(
-            200,
-            160,
-            75,
-            0.08
-        );
-
-    text-decoration: none;
-
-    transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+.story-start-button,
+.story-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .85rem 1.2rem;
+  border: 1px solid var(--story-gold);
+  border-radius: 999px;
+  color: var(--story-text);
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.story-start-button:hover,
+.story-back-button:hover {
+  background: var(--story-gold);
+  color: #080808;
+  transform: translateY(-1px);
 }
 
-
-.story-start-button:hover {
-    background:
-        rgba(
-            200,
-            160,
-            75,
-            0.16
-        );
-
-    border-color:
-        var(--story-gold-soft);
-
-    transform:
-        translateY(-2px);
-}
-
-
-/* =========================================================
-   7. TABLE OF CONTENTS
-   ========================================================= */
-
+/* ---------- Contents ---------- */
 .story-contents {
-    width:
-        min(
-            92%,
-            var(--story-max)
-        );
-
-    margin:
-        0 auto;
-
-    padding:
-        85px 0 110px;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  padding: 2.2rem 2rem;
 }
 
-
-.section-heading {
-    margin-bottom: 34px;
+.section-heading { margin-bottom: 1.5rem; }
+.section-heading h2,
+.chapter-heading h2 {
+  margin: .35rem 0 0;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
 }
-
-
-.section-heading h2 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size:
-        clamp(
-            2rem,
-            5vw,
-            3.4rem
-        );
-}
-
 
 .story-contents ol {
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            2,
-            minmax(0, 1fr)
-        );
-
-    gap:
-        10px 34px;
-
-    margin: 0;
-
-    padding: 0;
-
-    list-style: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .75rem;
 }
-
 
 .story-contents li a {
-    display: grid;
-
-    grid-template-columns:
-        92px 1fr;
-
-    gap: 12px;
-
-    padding:
-        15px 0;
-
-    border-bottom:
-        1px solid
-        var(--story-border);
-
-    color: var(--story-text);
-
-    text-decoration: none;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--story-border);
+  border-radius: 10px;
+  background: var(--story-panel);
+  color: var(--story-text);
+  text-decoration: none;
 }
+.story-contents li a:hover { border-color: var(--story-gold); }
+.story-contents li span { color: var(--story-gold); font-size: .88rem; }
 
-
-.story-contents li a span {
-    color: var(--story-gold);
-
-    font-size: 0.8rem;
-
-    letter-spacing: 0.08em;
-
-    text-transform: uppercase;
-}
-
-
-.story-contents li a strong {
-    font-size: 1rem;
-
-    font-weight: 500;
-}
-
-
-.story-contents li a:hover strong {
-    color: var(--story-gold-soft);
-}
-
-
-/* =========================================================
-   8. CHAPTER
-   ========================================================= */
-
+/* ---------- Default chapters (Mission K2-18b) ---------- */
 .story-chapter {
-    padding:
-        30px 0 115px;
-
-    scroll-margin-top: 80px;
+  max-width: 980px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
 }
 
-
-.chapter-heading {
-    width:
-        min(
-            92%,
-            var(--story-reading)
-        );
-
-    margin:
-        0 auto 32px;
-
-    text-align: center;
-}
-
-
-.chapter-kicker {
-    display: block;
-
-    margin-bottom: 10px;
-
-    color: var(--story-gold);
-
-    font-size: 0.82rem;
-    font-weight: 600;
-
-    letter-spacing: 0.15em;
-
-    text-transform: uppercase;
-}
-
-
-.chapter-heading h2 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size:
-        clamp(
-            2rem,
-            5vw,
-            3.5rem
-        );
-
-    line-height: 1.12;
-}
-
-
-/* =========================================================
-   9. CHAPTER IMAGES
-   ========================================================= */
-
-/*
-   Wichtig:
-   Kein object-fit: cover mehr.
-
-   Dadurch werden Valerie, Kopf, Arme usw.
-   nicht mehr abgeschnitten.
-*/
+.chapter-heading { margin-bottom: 1.5rem; }
 
 .chapter-image {
-    width:
-        min(
-            90%,
-            1250px
-        );
-
-    margin:
-        0 auto 48px;
+  margin: 0 0 2rem;
+  width: 100%;
 }
-
-
 .chapter-image img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-    max-height: none;
-
-    object-fit: contain;
-    object-position: center;
-
-    margin: 0 auto;
-
-    border-radius: 6px;
-
-    box-shadow:
-        0 18px 45px
-        rgba(
-            0,
-            0,
-            0,
-            0.38
-        );
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
 }
-
-
-/* =========================================================
-   10. STORY TEXT
-   ========================================================= */
 
 .story-copy {
-    width:
-        min(
-            88%,
-            var(--story-reading)
-        );
-
-    margin:
-        0 auto;
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 1.04rem;
+  line-height: 1.82;
 }
-
-
-.story-copy p {
-    margin:
-        0 0 1.35em;
-
-    color: var(--story-text);
-
-    font-size: 1.125rem;
-
-    line-height: 1.82;
-}
-
-
-/* Optional dezenter Kapitelanfang */
-
-.story-copy > p:first-child::first-letter {
-    color: var(--story-gold-soft);
-}
-
-/* =========================================================
-   11. CHAPTER 3 GALLERY
-   ========================================================= */
-
-.story-gallery {
-    width: min(90%, 1250px);
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-
-    margin: 48px auto 58px;
-}
-
-
-.story-gallery figure {
-    margin: 0;
-
-    width: 100%;
-    aspect-ratio: 16 / 9;
-
-    overflow: hidden;
-
-    border: 1px solid var(--story-border);
-    border-radius: 6px;
-
-    background: var(--story-panel);
-
-    box-shadow:
-        0 12px 30px
-        rgba(0, 0, 0, 0.30);
-}
-
-
-.story-gallery img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-}
-
-
-/* =========================================================
-   12. BACK TO CONTENTS
-   ========================================================= */
+.story-copy p { margin: 0 0 1.15rem; }
+.story-copy em { color: var(--story-gold); }
 
 .back-to-top {
-    display: block;
-
-    width:
-        min(
-            88%,
-            var(--story-reading)
-        );
-
-    margin:
-        36px auto 0;
-
-    color:
-        var(--story-gold);
-
-    font-size: 0.82rem;
-
-    letter-spacing: 0.04em;
-
-    text-decoration: none;
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: var(--story-gold);
+  text-decoration: none;
+  font-size: .92rem;
 }
+.back-to-top:hover { text-decoration: underline; }
 
-
-.back-to-top:hover {
-    color:
-        var(--story-gold-soft);
+.story-back {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+  text-align: center;
 }
-
 
 /* =========================================================
-   13. ENDING
+   BE RICH (Classic) ONLY
+   Requires: <body id="top" class="be-rich-story">
    ========================================================= */
 
-.story-ending {
-    width:
-        min(
-            92%,
-            var(--story-reading)
-        );
-
-    margin:
-        0 auto;
-
-    padding:
-        40px 0 95px;
-
-    text-align: center;
+/* Hero: compact portrait cover left, copy right */
+.be-rich-story .story-hero {
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 4rem;
+  max-width: 1100px;
+  padding: 4rem 2rem 5rem;
 }
 
-
-.story-ending h2 {
-    margin:
-        0 0 18px;
-
-    color:
-        #ffffff;
-
-    font-size:
-        clamp(
-            2.2rem,
-            5vw,
-            4rem
-        );
+.be-rich-story .story-hero-image {
+  width: 100%;
+  max-width: 320px;
+  justify-self: start;
 }
 
-
-.story-ending > p {
-    color:
-        var(--story-muted);
-
-    line-height:
-        1.7;
+.be-rich-story .story-hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
 }
 
-
-/* =========================================================
-   14. BUTTONS AT END
-   ========================================================= */
-
-.story-actions {
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin-top: 28px;
+.be-rich-story .story-hero-copy { max-width: 650px; }
+.be-rich-story .story-hero-copy h1 {
+  margin: .5rem 0 .75rem;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.05;
+}
+.be-rich-story .story-hero-copy .story-subtitle {
+  font-size: 1.45rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+.be-rich-story .story-hero-copy .story-intro {
+  max-width: 560px;
+  font-size: 1.18rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
 }
 
-
-.story-actions a {
-    padding:
-        11px 17px;
-
-    border:
-        1px solid
-        var(--story-border);
-
-    border-radius: 5px;
-
-    color:
-        var(--story-text);
-
-    text-decoration: none;
-
-    transition:
-        border-color 0.25s ease,
-        color 0.25s ease;
+/* Chapters: heading full width; portrait image left; text right */
+.be-rich-story .story-chapter {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  column-gap: 3.5rem;
+  row-gap: 1rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+  padding: 2.5rem 2rem;
 }
 
-
-.story-actions a:first-child {
-    border-color:
-        var(--story-gold);
+.be-rich-story .story-chapter .chapter-heading {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin-bottom: 1rem;
 }
 
-
-.story-actions a:hover {
-    color:
-        #ffffff;
-
-    border-color:
-        var(--story-gold-soft);
+.be-rich-story .story-chapter .chapter-image {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+  width: 100%;
+  max-width: 320px;
+  margin: 0;
+  justify-self: start;
+  align-self: start;
 }
 
-
-/* =========================================================
-   15. COPYRIGHT
-   ========================================================= */
-
-.story-copyright {
-    margin-top:
-        55px !important;
-
-    color:
-        #74716b !important;
-
-    font-size:
-        0.76rem;
+.be-rich-story .story-chapter .chapter-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
 }
 
+.be-rich-story .story-chapter .story-copy {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  max-width: 700px;
+  margin: 0;
+  font-size: 1.18rem;
+  line-height: 1.8;
+  align-self: start;
+}
 
-/* =========================================================
-   16. TABLET
-   ========================================================= */
+.be-rich-story .story-chapter .story-copy p {
+  margin: 0 0 1.15rem;
+}
+.be-rich-story .story-chapter .story-copy em {
+  color: var(--story-gold);
+  font-size: 1.05em;
+}
 
+.be-rich-story .story-chapter .back-to-top {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: start;
+  margin-top: .5rem;
+}
+
+/* ---------- Tablet ---------- */
 @media (max-width: 900px) {
+  .story-hero { gap: 2.5rem; }
 
-    .story-contents ol {
-        grid-template-columns: 1fr;
-    }
+  .be-rich-story .story-hero {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 2.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .be-rich-story .story-hero-image { max-width: 260px; }
+  .be-rich-story .story-hero-copy h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+  }
 
-
-    .chapter-image {
-        width: 92%;
-    }
-
-
-    .story-copy {
-        width: 90%;
-    }
-
+  .be-rich-story .story-chapter {
+    grid-template-columns: 260px minmax(0, 1fr);
+    column-gap: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .be-rich-story .story-chapter .chapter-image { max-width: 260px; }
+  .be-rich-story .story-chapter .story-copy {
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
 }
 
-
-/* =========================================================
-   17. MOBILE
-   ========================================================= */
-
-@media (max-width: 760px) {
-
-    .story-topbar {
-        min-height: 54px;
-
-        padding:
-            0 18px;
-    }
-
-
-    .story-home-link,
-    .story-language a,
-    .story-language span {
-        font-size:
-            0.75rem;
-    }
-
-
-    /* -----------------------------------------
-       HERO
-       ----------------------------------------- */
-
-    .story-hero {
-        min-height: auto;
-
-        display: block;
-    }
-
-
-    .story-hero-image {
-        position: relative;
-
-        width: 100%;
-
-        padding-top: 54px;
-    }
-
-
-    .story-hero-image::after {
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(8, 8, 8, 0.02),
-                rgba(8, 8, 8, 0.25),
-                #080808
-            );
-    }
-
-
-    .story-hero-image img {
-        width: 100%;
-        height: auto;
-
-        object-fit: contain;
-    }
-
-
-    .story-hero-copy {
-        width: 90%;
-
-        margin-top: -65px;
-
-        padding:
-            0 0 55px;
-    }
-
-
-    .story-hero h1 {
-        font-size:
-            clamp(
-                2.5rem,
-                13vw,
-                4.3rem
-            );
-    }
-
-
-    .story-subtitle {
-        font-size:
-            1.25rem;
-    }
-
-
-    /* -----------------------------------------
-       CONTENTS
-       ----------------------------------------- */
-
-    .story-contents {
-        width: 90%;
-
-        padding:
-            55px 0 80px;
-    }
-
-
-    .story-contents ol {
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .story-contents li a {
-        grid-template-columns:
-            72px 1fr;
-    }
-
-
-    /* -----------------------------------------
-       CHAPTER
-       ----------------------------------------- */
-
-    .story-chapter {
-        padding:
-            25px 0 85px;
-    }
-
-
-    .chapter-heading {
-        width: 90%;
-
-        margin-bottom:
-            24px;
-    }
-
-
-    .chapter-heading h2 {
-        font-size:
-            clamp(
-                1.9rem,
-                9vw,
-                3rem
-            );
-    }
-
-
-    /* -----------------------------------------
-       CHAPTER IMAGE
-       ----------------------------------------- */
-
-    .chapter-image {
-        width: 94%;
-
-        margin-bottom:
-            34px;
-    }
-
-
-    .chapter-image img {
-        width: 100%;
-        height: auto;
-
-        max-height: none;
-
-        aspect-ratio: auto;
-
-        object-fit: contain;
-    }
-
-
-    /* -----------------------------------------
-       STORY TEXT
-       ----------------------------------------- */
-
-    .story-copy {
-        width: 90%;
-    }
-
-
-    .story-copy p {
-        font-size:
-            1.08rem;
-
-        line-height:
-            1.78;
-
-        margin-bottom:
-            1.25em;
-    }
-
-
-    /* -----------------------------------------
-       GALLERY
-       ----------------------------------------- */
-
-    .story-gallery {
-        width: 94%;
-
-        grid-template-columns:
-            1fr;
-
-        gap: 14px;
-
-        margin:
-            36px auto 46px;
-    }
-
-
-    .story-gallery figure:first-child,
-    .story-gallery figure:last-child {
-        grid-column: auto;
-    }
-
-
-    .story-gallery img {
-        width: 100%;
-        height: auto;
-
-        object-fit: contain;
-    }
-
-
-    /* -----------------------------------------
-       ENDING
-       ----------------------------------------- */
-
-    .story-ending {
-        width: 90%;
-
-        padding-bottom:
-            70px;
-    }
-
+/* ---------- Smartphone ---------- */
+@media (max-width: 700px) {
+  .story-topbar { padding: 1rem 1.2rem; }
+
+  .story-hero {
+    display: block;
+    padding: 2rem 1.2rem 3.5rem;
+  }
+  .story-hero-image { margin-bottom: 2rem; }
+  .story-hero-copy { max-width: none; }
+
+  .story-contents {
+    padding: 1.5rem 1.2rem;
+    margin-bottom: 3rem;
+  }
+  .story-contents li a {
+    grid-template-columns: 1fr;
+    gap: .25rem;
+  }
+
+  .story-chapter {
+    padding: 0 1.2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .story-copy {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  /* Be Rich mobile */
+  .be-rich-story .story-hero {
+    display: block;
+    padding: 2rem 1.2rem 3.5rem;
+  }
+  .be-rich-story .story-hero-image {
+    width: 72%;
+    max-width: 300px;
+    margin: 0 auto 2rem;
+  }
+  .be-rich-story .story-hero-copy {
+    max-width: 100%;
+    text-align: center;
+  }
+  .be-rich-story .story-hero-copy h1 { font-size: 2.3rem; }
+  .be-rich-story .story-hero-copy .story-subtitle { font-size: 1.25rem; }
+  .be-rich-story .story-hero-copy .story-intro {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.08rem;
+  }
+
+  .be-rich-story .story-chapter {
+    display: block;
+    margin-bottom: 3.5rem;
+    padding: 2rem 1.2rem;
+  }
+  .be-rich-story .story-chapter .chapter-heading {
+    margin-bottom: 1.5rem;
+  }
+  .be-rich-story .story-chapter .chapter-image {
+    width: 72%;
+    max-width: 300px;
+    margin: 0 auto 2rem;
+  }
+  .be-rich-story .story-chapter .story-copy {
+    max-width: 100%;
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+  .be-rich-story .story-chapter .back-to-top {
+    display: inline-block;
+    margin-top: .75rem;
+  }
+
+  .story-back { padding: 0 1.2rem 4rem; }
 }
-
-
-/* =========================================================
-   18. SMALL SMARTPHONES
-   ========================================================= */
 
 @media (max-width: 420px) {
-
-    .story-topbar {
-        padding:
-            0 12px;
-    }
-
-
-    .story-language {
-        gap: 4px;
-    }
-
-
-    .story-language a,
-    .story-language span {
-        padding:
-            6px 7px;
-    }
-
-
-    .story-copy p {
-        font-size:
-            1.03rem;
-
-        line-height:
-            1.72;
-    }
-
-
-    .chapter-image {
-        width: 96%;
-    }
-
+  .be-rich-story .story-hero-image,
+  .be-rich-story .story-chapter .chapter-image {
+    width: 82%;
+  }
 }
