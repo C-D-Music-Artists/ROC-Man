@@ -78,3 +78,23 @@
     <url><loc>https://c-d-music-artists.github.io/ROC-Man/lyrics/be-rich-classic.html</loc></url>
 
 </urlset>
+
+<url>
+    <loc>https://c-d-music-artists.github.io/ROC-Man/stories/be-rich-classic.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"
+        href="https://c-d-music-artists.github.io/ROC-Man/stories/be-rich-classic.html" />
+    <xhtml:link rel="alternate" hreflang="de"
+        href="https://c-d-music-artists.github.io/ROC-Man/de/stories/be-rich-classic.html" />
+    <xhtml:link rel="alternate" hreflang="x-default"
+        href="https://c-d-music-artists.github.io/ROC-Man/stories/be-rich-classic.html" />
+</url>
+
+<url>
+    <loc>https://c-d-music-artists.github.io/ROC-Man/de/stories/be-rich-classic.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"
+        href="https://c-d-music-artists.github.io/ROC-Man/stories/be-rich-classic.html" />
+    <xhtml:link rel="alternate" hreflang="de"
+        href="https://c-d-music-artists.github.io/ROC-Man/de/stories/be-rich-classic.html" />
+    <xhtml:link rel="alternate" hreflang="x-default"
+        href="https://c-d-music-artists.github.io/ROC-Man/stories/be-rich-classic.html" />
+</url>
