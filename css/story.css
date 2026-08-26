@@ -434,94 +434,102 @@ body {
     width: 82%;
   }
 }
+
 /* =========================================================
-   STORY ENDING
+   STORY ENDING – Mission K2-18b / shared
    ========================================================= */
 
 .story-ending {
-    max-width: 1000px;
-
-    margin: 100px auto 0;
-    padding: 60px 24px 50px;
-
-    text-align: center;
+  width: calc(100% - 4rem);
+  max-width: 1000px;
+  box-sizing: border-box;
+  margin: 6rem auto 0;
+  padding: 3.75rem 1.5rem 3.125rem;
+  text-align: center;
 }
-
 
 .story-ending .story-eyebrow {
-    display: block;
-
-    margin-bottom: 14px;
-
-    text-align: center;
+  display: block;
+  margin: 0 auto .9rem;
+  text-align: center;
 }
-
 
 .story-ending h2 {
-    margin: 0 auto 24px;
-
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.05;
-
-    text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+  text-align: center;
 }
-
 
 .story-ending > p {
-    max-width: 700px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    text-align: center;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  text-align: center;
+  line-height: 1.7;
 }
-
 
 .story-actions {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 16px;
-
-    margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.75rem auto 0;
+  text-align: center;
 }
-
 
 .story-actions a {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 11px 18px;
-
-    border: 1px solid var(--story-gold);
-    border-radius: 6px;
-
-    color: var(--story-gold);
-
-    text-decoration: none;
-
-    transition: 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .7rem 1.1rem;
+  border: 1px solid var(--story-gold);
+  border-radius: 6px;
+  color: var(--story-gold);
+  text-decoration: none;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
 }
-
 
 .story-actions a:hover {
-    background: var(--story-gold);
-
-    color: #080808;
+  background: var(--story-gold);
+  color: #080808;
+  transform: translateY(-1px);
 }
 
+.story-ending .story-copyright {
+  max-width: 850px;
+  margin: 2.5rem auto 0;
+  color: var(--story-muted);
+  font-size: .8rem;
+  line-height: 1.6;
+  text-align: center;
+}
 
-.story-copyright {
-    margin-top: 40px !important;
+@media (max-width: 700px) {
+  .story-ending {
+    width: calc(100% - 2.4rem);
+    margin-top: 4rem;
+    padding: 2.75rem 0 2.5rem;
+  }
 
-    text-align: center;
+  .story-ending h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
 
-    font-size: 0.8rem;
-    color: var(--story-muted);
+  .story-actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 320px;
+  }
+
+  .story-actions a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .story-ending .story-copyright {
+    font-size: .76rem;
+  }
 }
