@@ -434,3 +434,94 @@ body {
     width: 82%;
   }
 }
+/* =========================================================
+   STORY ENDING
+   ========================================================= */
+
+.story-ending {
+    max-width: 1000px;
+
+    margin: 100px auto 0;
+    padding: 60px 24px 50px;
+
+    text-align: center;
+}
+
+
+.story-ending .story-eyebrow {
+    display: block;
+
+    margin-bottom: 14px;
+
+    text-align: center;
+}
+
+
+.story-ending h2 {
+    margin: 0 auto 24px;
+
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.05;
+
+    text-align: center;
+}
+
+
+.story-ending > p {
+    max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+
+.story-actions {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-top: 28px;
+}
+
+
+.story-actions a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 18px;
+
+    border: 1px solid var(--story-gold);
+    border-radius: 6px;
+
+    color: var(--story-gold);
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+
+.story-actions a:hover {
+    background: var(--story-gold);
+
+    color: #080808;
+}
+
+
+.story-copyright {
+    margin-top: 40px !important;
+
+    text-align: center;
+
+    font-size: 0.8rem;
+    color: var(--story-muted);
+}
