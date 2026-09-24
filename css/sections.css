@@ -1930,4 +1930,67 @@ sections.css
     }
 
    
+/* Under Two Moons – Story Buttons */
+
+.story-button {
+    padding: 13px 18px;
+    min-height: 0;
+}
+
+.story-button .story-button-text {
+    font-size: 0.88rem;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+/* Hauptbutton */
+.story-button:hover,
+.story-button:focus {
+    background: #d4af37;
+    color: #000;
+}
+
+.story-button:hover .story-button-icon,
+.story-button:hover .story-button-text,
+.story-button:hover .story-button-arrow,
+.story-button:focus .story-button-icon,
+.story-button:focus .story-button-text,
+.story-button:focus .story-button-arrow {
+    color: #000;
+}
+
+/* Zweiter Story-Button */
+
+.story-button-secondary {
+    margin-top: 12px;
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.75);
+    color: #d4af37;
+}
+
+.story-button-secondary .story-button-icon,
+.story-button-secondary .story-button-text,
+.story-button-secondary .story-button-arrow {
+    color: #d4af37;
+}
+
+.story-button-secondary .story-button-text {
+    font-size: 0.86rem;
+}
+
+/* Hover des zweiten Buttons */
+.story-button-secondary:hover,
+.story-button-secondary:focus {
+    background: rgba(212, 175, 55, 0.12);
+    border-color: #d4af37;
+    color: #f0cf70;
+}
+
+.story-button-secondary:hover .story-button-icon,
+.story-button-secondary:hover .story-button-text,
+.story-button-secondary:hover .story-button-arrow,
+.story-button-secondary:focus .story-button-icon,
+.story-button-secondary:focus .story-button-text,
+.story-button-secondary:focus .story-button-arrow {
+    color: #f0cf70;
 }
